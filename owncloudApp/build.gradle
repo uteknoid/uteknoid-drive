@@ -103,10 +103,10 @@ android {
         minSdkVersion sdkMinVersion
         targetSdkVersion sdkTargetVersion
 
-        testInstrumentationRunner "com.owncloud.android.utils.OCTestAndroidJUnitRunner"
+        testInstrumentationRunner "com.uteknoid.drive.utils.OCTestAndroidJUnitRunner"
 
-        versionCode = 22100100
-        versionName = "2.21.1"
+        versionCode = 10000000
+        versionName = "1.0.0"
 
         buildConfigField "String", gitRemote, "\"" + getGitOriginRemote() + "\""
         buildConfigField "String", commitSHA1, "\"" + getLatestGitHash() + "\""
@@ -157,7 +157,7 @@ android {
         }
 
         debug {
-            applicationIdSuffix ".debug"
+            applicationIdSuffix ""
         }
     }
 
@@ -203,12 +203,12 @@ def setOutputFileName(variant, appName, callerProject) {
     def originalName = originalFile.name
     println "originalName is $originalName"
 
-    def newName = ""
+    def newName = "uteknoid"
 
     if (appName) {
         newName += appName
     } else {
-        newName += "owncloud"
+        newName += "uteknoid"
     }
 
     def versionName = "$variant.mergedFlavor.versionName"

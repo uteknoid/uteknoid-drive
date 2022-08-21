@@ -18,7 +18,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.owncloud.android">
+    package="com.uteknoid.drive">
     <!--
          GET_ACCOUNTS is needed for API < 23.
         For API >= 23 results in the addition of CONTACTS group to the list of permissions that may be
@@ -55,11 +55,11 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name=".MainApp"
+        android:name="com.uteknoid.drive.MainApp"
         android:allowBackup="false"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:manageSpaceActivity="com.owncloud.android.ui.activity.ManageSpaceActivity"
+        android:manageSpaceActivity="com.uteknoid.drive.ui.activity.ManageSpaceActivity"
         android:networkSecurityConfig="@xml/network_security_config"
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
@@ -72,13 +72,13 @@
             android:resource="@xml/managed_configurations" />
 
         <activity
-            android:name=".presentation.ui.releasenotes.ReleaseNotesActivity"
+            android:name="com.uteknoid.drive.presentation.ui.releasenotes.ReleaseNotesActivity"
             android:exported="false" />
-        <activity android:name=".presentation.ui.settings.PrivacyPolicyActivity" />
-        <activity android:name=".presentation.ui.settings.SettingsActivity" />
-        <activity android:name=".presentation.ui.migration.StorageMigrationActivity" />
+        <activity android:name="com.uteknoid.drive.presentation.ui.settings.PrivacyPolicyActivity" />
+        <activity android:name="com.uteknoid.drive.presentation.ui.settings.SettingsActivity" />
+        <activity android:name="com.uteknoid.drive.presentation.ui.migration.StorageMigrationActivity" />
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name="com.uteknoid.drive.ui.activity.SplashActivity"
             android:theme="@style/Theme.ownCloud.Splash"
             android:exported="true">
             <intent-filter>
@@ -87,12 +87,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.FileDisplayActivity"
+            android:name="com.uteknoid.drive.ui.activity.FileDisplayActivity"
             android:theme="@style/Theme.ownCloud.Toolbar.Drawer"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".ui.activity.ManageAccountsActivity" />
+        <activity android:name="com.uteknoid.drive.ui.activity.ManageAccountsActivity" />
         <activity
-            android:name=".ui.activity.ReceiveExternalFilesActivity"
+            android:name="com.uteknoid.drive.ui.activity.ReceiveExternalFilesActivity"
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:taskAffinity=""
@@ -113,11 +113,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.preview.PreviewImageActivity"
+            android:name="com.uteknoid.drive.ui.preview.PreviewImageActivity"
             android:theme="@style/Theme.ownCloud.Overlay" />
 
         <service
-            android:name=".authentication.AccountAuthenticatorService"
+            android:name="com.uteknoid.drive.authentication.AccountAuthenticatorService"
             android:exported="true">
             <intent-filter android:priority="100">
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -128,7 +128,7 @@
                 android:resource="@xml/authenticator" />
         </service>
         <service
-            android:name=".syncadapter.FileSyncService"
+            android:name="com.uteknoid.drive.syncadapter.FileSyncService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
@@ -139,32 +139,32 @@
                 android:resource="@xml/syncadapter_files" />
         </service>
         <service
-            android:name=".files.services.RetryUploadJobService"
+            android:name="com.uteknoid.drive.files.services.RetryUploadJobService"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
-            android:name=".files.services.RetryDownloadJobService"
+            android:name="com.uteknoid.drive.files.services.RetryDownloadJobService"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
-            android:name=".files.services.AvailableOfflineSyncJobService"
+            android:name="com.uteknoid.drive.files.services.AvailableOfflineSyncJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <provider
-            android:name=".providers.FileContentProvider"
+            android:name="com.uteknoid.drive.providers.FileContentProvider"
             android:authorities="@string/authority"
             android:enabled="true"
             android:exported="true"
             android:label="@string/sync_string_files"
             android:syncable="true" />
         <provider
-            android:name=".presentation.providers.sharing.UsersAndGroupsSearchProvider"
+            android:name="com.uteknoid.drive.presentation.providers.sharing.UsersAndGroupsSearchProvider"
             android:authorities="@string/search_suggest_authority"
             android:enabled="true"
             android:exported="false"
             android:label="@string/search_users_and_groups_hint" />
         <provider
-            android:name=".providers.DocumentsStorageProvider"
+            android:name="com.uteknoid.drive.providers.DocumentsStorageProvider"
             android:authorities="@string/document_provider_authority"
             android:exported="true"
             android:grantUriPermissions="true"
@@ -185,36 +185,36 @@
                 tools:replace="android:resource" />
         </provider>
 
-        <service android:name=".services.OperationsService" />
-        <service android:name=".files.services.FileDownloader" />
-        <service android:name=".files.services.FileUploader" />
-        <service android:name=".media.MediaService" />
+        <service android:name="com.uteknoid.drive.services.OperationsService" />
+        <service android:name="com.uteknoid.drive.files.services.FileDownloader" />
+        <service android:name="com.uteknoid.drive.files.services.FileUploader" />
+        <service android:name="com.uteknoid.drive.media.MediaService" />
 
         <activity
-            android:name=".presentation.ui.security.passcode.PassCodeActivity"
+            android:name="com.uteknoid.drive.presentation.ui.security.passcode.PassCodeActivity"
             android:theme="@style/Theme.ownCloud"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ui.activity.ConflictsResolveActivity"
+            android:name="com.uteknoid.drive.ui.activity.ConflictsResolveActivity"
             android:theme="@style/Theme.ownCloud" />
         <activity
-            android:name=".presentation.ui.logging.LogsListActivity"
+            android:name="com.uteknoid.drive.presentation.ui.logging.LogsListActivity"
             android:configChanges="orientation|screenSize" />
-        <activity android:name=".ui.errorhandling.ErrorShowActivity" />
+        <activity android:name="com.uteknoid.drive.ui.errorhandling.ErrorShowActivity" />
         <activity
-            android:name=".ui.activity.UploadListActivity"
+            android:name="com.uteknoid.drive.ui.activity.UploadListActivity"
             android:theme="@style/Theme.ownCloud.Toolbar.Drawer" />
         <activity
-            android:name=".ui.activity.WhatsNewActivity"
+            android:name="com.uteknoid.drive.ui.activity.WhatsNewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".ui.activity.CopyToClipboardActivity"
+            android:name="com.uteknoid.drive.ui.activity.CopyToClipboardActivity"
             android:icon="@drawable/copy_link"
             android:label="@string/copy_link" />
-        <activity android:name=".ui.activity.FolderPickerActivity" />
-        <activity android:name=".ui.activity.UploadPathActivity" />
+        <activity android:name="com.uteknoid.drive.ui.activity.FolderPickerActivity" />
+        <activity android:name="com.uteknoid.drive.ui.activity.UploadPathActivity" />
         <activity
-            android:name=".presentation.ui.sharing.ShareActivity"
+            android:name="com.uteknoid.drive.presentation.ui.sharing.ShareActivity"
             android:label="@string/share_dialog_title"
             android:launchMode="singleTop"
             android:theme="@style/Theme.ownCloud"
@@ -229,20 +229,20 @@
                 android:resource="@xml/users_and_groups_searchable" />
         </activity>
         <activity
-            android:name=".ui.activity.ManageSpaceActivity"
+            android:name="com.uteknoid.drive.ui.activity.ManageSpaceActivity"
             android:label="@string/manage_space_title"
             android:theme="@style/Theme.ownCloud" />
         <activity
-            android:name=".ui.preview.PreviewVideoActivity"
+            android:name="com.uteknoid.drive.ui.preview.PreviewVideoActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:theme="@style/Theme.ownCloud.Fullscreen" />
         <activity
-            android:name=".presentation.ui.security.PatternActivity"
+            android:name="com.uteknoid.drive.presentation.ui.security.PatternActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ownCloud" />
-        <activity android:name=".presentation.ui.security.BiometricActivity" />
+        <activity android:name="com.uteknoid.drive.presentation.ui.security.BiometricActivity" />
         <activity
-            android:name=".presentation.ui.authentication.LoginActivity"
+            android:name="com.uteknoid.drive.presentation.ui.authentication.LoginActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.ownCloud.Toolbar">

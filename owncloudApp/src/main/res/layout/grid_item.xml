@@ -15,7 +15,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
   
 -->
-<com.owncloud.android.ui.SquareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.uteknoid.drive.ui.SquareLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ListItemLayout"
     android:layout_width="match_parent"
@@ -82,4 +82,4 @@
         android:textSize="16dip"
         tools:text="TextView"/>
 
-</com.owncloud.android.ui.SquareLinearLayout>
+</com.uteknoid.drive.ui.SquareLinearLayout>

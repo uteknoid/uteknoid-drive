@@ -27,6 +27,7 @@
         android:id="@+id/login_background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:foreground="@drawable/drawer_header_background"
         android:scaleType="centerCrop"
         android:src="@drawable/login_background_image"
         android:visibility="gone"
@@ -93,7 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:visibility="visible">
 
                     <EditText
                         android:id="@+id/hostUrlInput"
@@ -103,6 +105,7 @@
                         android:layout_gravity="bottom"
                         android:drawablePadding="5dp"
                         android:hint="@string/auth_host_url"
+                        android:text="https://drive.uteknoid.com"
                         android:inputType="textUri"
                         android:paddingEnd="55dp"
                         android:theme="@style/Theme.ownCloud.Authenticator.EditText">

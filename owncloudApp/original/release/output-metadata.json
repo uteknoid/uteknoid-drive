@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.uteknoid.drive",
+  "variantName": "originalRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 10000000,
+      "versionName": "1.0.0",
+      "outputFile": "uteknoiduteknoid_1.0.0-original-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -24,6 +24,7 @@
     <item>
         <bitmap
             android:src="@drawable/splash_image"
+            android:tint="@color/owncloud_blue"
             android:gravity="center"/>
     </item>
 </layer-list>

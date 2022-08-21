@@ -74,8 +74,8 @@ subprojects {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "owncloud_android"
-        property "sonar.organization", "owncloud-1"
+        property "sonar.projectKey", "uteknoid_drive"
+        property "sonar.organization", "uteknoid-1"
         property "sonar.projectVersion", getBranchName()
         property "sonar.host.url", "https://sonarcloud.io"
     }

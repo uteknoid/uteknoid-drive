@@ -25,8 +25,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/drawer_logo"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_width="259dp"
+        android:layout_height="70dp"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
